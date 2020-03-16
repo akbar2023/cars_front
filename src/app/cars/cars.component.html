@@ -1,0 +1,12 @@
+<h1>My cars</h1>
+
+<button *ngFor="let brand of brands" (click)="getCarsByBrand(brand)">{{ brand }}</button>
+
+<button (click)="createCar({id: 0, model: 'Megane', brand:'Renault'})">Create Mégane</button>
+
+<div *ngFor="let car of cars">
+    <div style="margin: 10px; background-color: antiquewhite; width: 100px;">
+        <div>{{car.brand}}</div>
+        <div>{{car.model}}</div>
+    </div>
+</div>
