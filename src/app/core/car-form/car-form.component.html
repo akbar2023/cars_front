@@ -1,0 +1,20 @@
+
+<form [formGroup]="carForm" (ngSubmit)="onSubmit()">
+    <div>
+        <label>
+          Brand:
+          <input type="text" formControlName="brand" required>
+        </label>
+    </div>
+  
+    <div>
+        <label>
+          Model:
+          <input type="text" formControlName="model" required>
+        </label>
+    </div>
+
+    <button type="submit" [disabled]="!carForm.valid">Create</button>
+</form>
+
+<p>{{success}}</p>

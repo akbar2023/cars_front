@@ -1,5 +1,9 @@
-export interface Car {
-    id: number;
-    brand: string;
-    model: string;
-}
+export class Car {
+
+    constructor(
+      public id: number,
+      public brand: string,
+      public model: string,
+    ) {  }
+  
+  }

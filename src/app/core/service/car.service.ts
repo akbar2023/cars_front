@@ -15,15 +15,19 @@ export class CarService {
 
 
   findCarsByBrand(brand: String): Observable<Car[]> {
-    return this.http.get<Car[]>(this.url + '/brand/' + brand);
+    return this.http.get<Car[]>(this.url + 'brand/' + brand);
+  }
+
+  getCarById(id: number) :Observable<Car> {
+    return this.http.get<Car>(this.url + 'id/' + id);
   }
 
   addCar(car: Car) :Observable<Car>{
     return this.http.post<Car>(this.url, car);
   }
 
-  // public findCarsByBrand(brand: string): Promise<Response> {
-  //   return fetch(`${this.url}brand/${brand}`)
-  // }
+  updateCar(car: Car) :Observable<Car>{
+    return this.http.put<Car>(this.url + 'update/' + car.id, car);
+  }
 
 }

@@ -17,10 +17,7 @@ export class CarsComponent implements OnInit {
   constructor(private service: CarService) { }
 
 
-  ngOnInit(): void {
-    // .then(response => response.json())
-    // .then(response => this.brands = response)
-  }
+  ngOnInit() {}
 
   getCarsByBrand(brand: String) {
     this.service.findCarsByBrand(brand).subscribe((data: Car[]) => {
@@ -29,10 +26,8 @@ export class CarsComponent implements OnInit {
     })
   }
 
-  createCar(car: Car) {
-    this.service.addCar(car).subscribe((data: Car) => {
-      console.log(data);
-    })
+  updateCar(car: Car) {
+    
   }
 
 }
